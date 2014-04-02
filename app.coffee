@@ -1,12 +1,10 @@
 ((doc, loc) ->
 
-  if loc.host is "500px.com" and photo = doc.querySelector('.the_photo')
+  if loc.host is "500px.com"
 
-    image = photo.src
-    body = doc.getElementsByTagName("body")[0]
+    body = doc.querySelector("body")
     link = doc.createElement("a")
     link.id = "500px-image-save"
-    link.href = image
     link.innerHTML = "下载图片"
 
     style = [
@@ -29,6 +27,8 @@
 
     link.setAttribute "style", style
     link.setAttribute "target", "_blank"
+
+    link.onclick = () -> @href = doc.querySelector('.the_photo')?.src
 
     body.appendChild link
 
