@@ -28,7 +28,7 @@
     link.setAttribute "style", style
     link.setAttribute "target", "_blank"
 
-    link.onclick = () -> @href = doc.querySelector('.the_photo')?.src
+    link.onclick = -> @href = doc.querySelector('.the_photo')?.src
 
     body.appendChild link
 
