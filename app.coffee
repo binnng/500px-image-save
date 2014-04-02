@@ -1,9 +1,8 @@
 ((doc, loc) ->
-  el = doc.querySelectorAll(".the_photo")
-  el = el and el[0]
 
-  if loc.host is "500px.com" and el
-    image = el.src
+  if loc.host is "500px.com" and photo = doc.querySelector('.the_photo')
+
+    image = photo.src
     body = doc.getElementsByTagName("body")[0]
     link = doc.createElement("a")
     link.id = "500px-image-save"
@@ -32,4 +31,5 @@
     link.setAttribute "target", "_blank"
 
     body.appendChild link
+
 ) document, location
