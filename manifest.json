@@ -1,0 +1,18 @@
+{
+  "name": "500px-image-save",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "500px-image-save",
+  "icons": {
+    "48": "icon.png"
+  },
+  "permissions": ["tabs", "http://500px.com/photo/*"],
+  "content_scripts": [{
+    "matches": ["http://500px.com/photo/*"],
+    "js": ["app.js"]
+  }],
+  "browser_action": {
+    "default_title": "",
+    "default_icon": "icon.png"
+  }
+}
